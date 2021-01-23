@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="rpt545_report"
+            model="pos.session"
+            string="Reporte Propina por Sesion"
+            report_type="qweb-pdf"
+            name="eclo_pos_reporte_propina.report_rpt545"
+            file="eclo_pos_reporte_propina.report_rpt545"
+        />
+    </data>
+</openerp>

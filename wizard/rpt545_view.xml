@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- eclo_060 rpt545  -->
+<openerp>
+	<data>
+		<record id="rpt545_form" model="ir.ui.view">
+			<field name="name">rpt545.form</field>
+			<field name="model">eclo_545.rpt545</field>
+			<field name="arch" type="xml">
+				<form string="Eclosion">
+					<sheet>
+						<h1><label string="Informe por Session"/></h1>
+						<group>
+							<field name="session_id" string='Codigo' invisible='len(context.get("active_ids",[]))>1'/>
+						</group>
+
+					</sheet>
+					<footer>
+						<button name="action_report" type="object" string="Print"/>
+						<button name="cancel" type="special" string="Cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="rpt545_action" model="ir.actions.act_window">
+			<field name="name">rpt545</field>
+			<field name="res_model">eclo_545.rpt545</field>
+			<field name="view_mode">form</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+		</record>
+		
+<!--		<menuitem name="rpt545" parent="account.next_id_22" id="rpt545_menu" action="rpt545_action"/>
+	-->
+		
+		<act_window id="rpt545_wizard"
+			name="Informe Cierre diario POS"
+			src_model="pos.config"
+			res_model="eclo_545.rpt545"
+			view_mode="form"
+			target="new"
+			key2="client_print_multi"/>
+		
+	</data>
+</openerp>

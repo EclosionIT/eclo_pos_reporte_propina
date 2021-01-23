@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eclo_pos_reporte_propina_eclo_pos_reporte_propina,eclo_pos_reporte_propina.eclo_pos_reporte_propina,model_eclo_pos_reporte_propina_eclo_pos_reporte_propina,,1,0,0,0

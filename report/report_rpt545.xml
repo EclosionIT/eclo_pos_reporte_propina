@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<!--eclo_060  rpt5455 -->
+<template id="report_rpt545">
+<!--
+ <t t-call="report.html_container">
+		<t t-set="data_report_margin_top" t-value="10"/>
+		<t t-set="data_report_header_spacing" t-value="9"/>
+		<t t-set="data_report_dpi" t-value="110"/> 
+<t t-call="report.internal_layout">	 -->
+<div class="page">	
+	   <div class="row mt32">
+			<p>
+					<br/>
+						POS Reporte de Propinas
+					<br/>
+			</p>
+		</div>
+				<left>	
+					Reporte expedido el 
+					<span t-esc="formatLang(time.strftime('%Y-%m-%d %H:%M:%S+0000'),date_time=True)"/>
+				</left>
+<!-- ______________________________________________________________________________  -->		
+					<table class="table table-condensed">
+					<thead>
+							<tr>
+								<th>Concepto</th> 
+								<th>Valor</th>
+							</tr>
+					</thead>
+						<tbody>
+							<t t-foreach="get_session(data,docs)" t-as="o">
+							<h2>
+								<td><span t-esc="o['name']"/></td>
+							</h2>								
+
+							<tr t-foreach="get_lines(data, o.id)" t-as="line">
+								<td><span t-esc="line[1]"/></td>
+								<td class="text-right"><span t-esc="formatLang(line[2])"/></td>
+								</tr>	
+							</t>
+						</tbody>
+					</table>	
+</div>
+<!--
+</t>
+</t> -->
+</template>
+</data>
+</openerp>
